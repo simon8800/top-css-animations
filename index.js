@@ -11,11 +11,6 @@ const modalCloseButton = document.querySelector(".modal-content .button");
 modalCloseButton.addEventListener("click", () => {
   console.log("hello from close button");
   modal.setAttribute("closing", "");
-  // modal.classList.add("closing");
-  // modal.addEventListener("animationstart", listener, false);
-  // modal.addEventListener("animationend", listener, { once: true });
-  // modal.addEventListener("animationiteration", listener, false);
-
   modal.addEventListener(
     "animationend",
     () => {
@@ -24,6 +19,22 @@ modalCloseButton.addEventListener("click", () => {
     },
     { once: true }
   );
+});
+
+const menuButton = document.querySelector(".dropbtn");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+const menuItems = document.querySelectorAll(".menu-item");
+menuButton.addEventListener("click", () => {
+  console.log("hello from menuButton");
+  dropdownMenu.style.display = "block";
+  dropdownMenu.classList.add("open");
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target !== menuButton) {
+    dropdownMenu.style.display = "none";
+    dropdownMenu.classList.remove("open");
+  }
 });
 
 // function listener(event) {
