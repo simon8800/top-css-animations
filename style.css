@@ -143,6 +143,10 @@
   height: 50px;
 }
 
+.menu-item:hover {
+  background-color: #383838;
+}
+
 .dropdown-menu.open {
   animation-name: expand;
   animation-duration: 1000ms;
